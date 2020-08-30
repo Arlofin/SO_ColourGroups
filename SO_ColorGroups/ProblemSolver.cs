@@ -19,7 +19,7 @@ namespace ColorGroups
                                        select color.Points.Select(colorValue => new ColorPoint(colorValue, color));
             var groupCandidates = from colorPointCombination in SetOperations<ColorPoint>.CrossProduct(colourPointsPerColor)
                                   select new Group(colorPointCombination);
-            return groupCandidates.Where(group => IsGroupValid(group));
+            return groupCandidates.Where(IsGroupValid);
         }
 
         public static IEnumerable<Group> NaiveSolver(ProblemSpecification spec)

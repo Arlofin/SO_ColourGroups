@@ -26,9 +26,9 @@ namespace Application
             Console.WriteLine("Yellow: {0}", String.Join(", ", yellow.Points));
             Console.WriteLine();
             Console.WriteLine("The distances:");
-            Console.WriteLine("Red to blue:    {0}",  red.Distance);
-            Console.WriteLine("Green to red:   {0}",  green.Distance);
-            Console.WriteLine("Yello to green: {0}", yellow.Distance);
+            Console.WriteLine("Red to blue:     {0}",  red.Distance);
+            Console.WriteLine("Green to red:    {0}",  green.Distance);
+            Console.WriteLine("Yellow to green: {0}", yellow.Distance);
             Console.WriteLine();
             Console.WriteLine("The groups:");
             foreach (var group in groups)
