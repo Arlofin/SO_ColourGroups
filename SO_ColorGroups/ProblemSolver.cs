@@ -24,10 +24,15 @@ namespace ColorGroups
 
         public static IEnumerable<Group> NaiveSolver(ProblemSpecification spec)
         {
-            int minimalNumberOfColors = (int)Math.Ceiling(spec.Fraction * spec.Colors.Count);
+            int minimalNumberOfColors = MinimalNumberOfColors(spec.Colors.Count, spec.Fraction);
             return Enumerable.Range(minimalNumberOfColors, spec.Colors.Count - minimalNumberOfColors + 1)
                 .SelectMany(n => SetOperations<Color>.SubSets(spec.Colors, n)
                     .SelectMany(NaiveSolverFull));
+        }
+
+        public static int MinimalNumberOfColors(int nrColors, double fractionOfColorsToUse)
+        {
+            return (int)Math.Ceiling(fractionOfColorsToUse * nrColors);
         }
     }
 }

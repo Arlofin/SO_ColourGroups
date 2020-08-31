@@ -26,9 +26,11 @@ namespace Application
             Console.WriteLine("Yellow: {0}", String.Join(", ", yellow.Points));
             Console.WriteLine();
             Console.WriteLine("The distances:");
-            Console.WriteLine("Red to blue:     {0}",  red.Distance);
-            Console.WriteLine("Green to red:    {0}",  green.Distance);
-            Console.WriteLine("Yellow to green: {0}", yellow.Distance);
+            Console.WriteLine("Before red:    {0}",  red.Distance);
+            Console.WriteLine("Before green:  {0}",  green.Distance);
+            Console.WriteLine("Before yellow: {0}", yellow.Distance);
+            Console.WriteLine();
+            Console.WriteLine("{0} colors may be skipped.", spec.Colors.Count - ProblemSolver.MinimalNumberOfColors(spec.Colors.Count, spec.Fraction));
             Console.WriteLine();
             Console.WriteLine("The groups:");
             foreach (var group in groups)
